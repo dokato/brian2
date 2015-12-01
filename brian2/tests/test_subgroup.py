@@ -34,9 +34,9 @@ def test_state_variables():
                     np.array([-80, -100, -80, -80, -80])*mV)
     assert_allclose(single_SG.v, np.array([-100])*mV)
     assert_allclose(G.v_,
-                    np.array([0, 0, 0, 0, -80, -100, -80, -80, -80, 0])*mV)
+                    np.array([0, 0, 0, 0, -80, -100, -80, -80, -80, 0])*float(mV))
     assert_allclose(SG.v_,
-                    np.array([-80, -100, -80, -80, -80])*mV)
+                    np.array([-80, -100, -80, -80, -80])*float(mV))
     single_SG.v = -80*mV
     # You should also be able to set variables with a string
     SG.v = 'v + i*mV'

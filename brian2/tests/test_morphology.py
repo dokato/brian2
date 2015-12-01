@@ -257,7 +257,7 @@ def test_subgroup():
     assert_allclose(morpho.LL[1.5*um].distance,12*um)
     assert_allclose(morpho.LL[5*um].distance,15*um)
     # Getting a segment
-    assert_allclose(morpho.L[3*um:5.1*um].distance,[3*um,4*um,5*um])
+    assert_allclose(morpho.L[3*um:5.1*um].distance, [3, 4, 5]*um)
     # Absolute indices
     assert_equal(morpho.LL.indices[:], [11, 12, 13, 14, 15])
     assert_equal(morpho.L.indices[3*um:5.1*um], [3, 4, 5])

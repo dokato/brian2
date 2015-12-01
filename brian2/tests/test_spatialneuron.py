@@ -40,30 +40,30 @@ def test_construction():
     assert_allclose(neuron.Cm, 1 * uF / cm ** 2)
 
     # Test morphological variables
-    assert_allclose(neuron.main.x_, morpho.x)
-    assert_allclose(neuron.L.main.x_, morpho.L.x)
-    assert_allclose(neuron.LL.main.x_, morpho.LL.x)
-    assert_allclose(neuron.right.main.x_, morpho.right.x)
-    assert_allclose(neuron.L.main.distance_, morpho.L.distance)
-    assert_allclose(neuron.L.main.diameter_, morpho.L.diameter)
-    assert_allclose(neuron.L.main.area_, morpho.L.area)
-    assert_allclose(neuron.L.main.length_, morpho.L.length)
+    assert_allclose(neuron.main.x, morpho.x)
+    assert_allclose(neuron.L.main.x, morpho.L.x)
+    assert_allclose(neuron.LL.main.x, morpho.LL.x)
+    assert_allclose(neuron.right.main.x, morpho.right.x)
+    assert_allclose(neuron.L.main.distance, morpho.L.distance)
+    assert_allclose(neuron.L.main.diameter, morpho.L.diameter)
+    assert_allclose(neuron.L.main.area, morpho.L.area)
+    assert_allclose(neuron.L.main.length, morpho.L.length)
 
     # Check basic consistency of the flattened representation
     assert all(neuron.diffusion_state_updater._ends[:].flat >=
                neuron.diffusion_state_updater._starts[:].flat)
 
     # Check that length and distances make sense after compression
-    assert_allclose(sum(morpho.L.length)*metre, 10*um)
-    assert_allclose(morpho.L.distance*metre, (1 + np.arange(10))*um)
-    assert_allclose(sum(morpho.LL.length)*metre, 5*um)
-    assert_allclose(morpho.LL.distance*metre, 10*um + (1 + np.arange(5))*um)
-    assert_allclose(sum(morpho.LR.length)*metre, 5*um)
-    assert_allclose(morpho.LR.distance*metre, 10*um + (1 + np.arange(10))*0.5*um)
-    assert_allclose(sum(morpho.right.length)*metre, 3*um)
-    assert_allclose(morpho.right.distance*metre, (1 + np.arange(7))*3./7.*um)
-    assert_allclose(sum(morpho.right.nextone.length)*metre, 2*um)
-    assert_allclose(morpho.right.nextone.distance*metre, 3*um+(1 + np.arange(3))*2./3.*um)
+    assert_allclose(sum(morpho.L.length), 10*um)
+    assert_allclose(morpho.L.distance, (1 + np.arange(10))*um)
+    assert_allclose(sum(morpho.LL.length), 5*um)
+    assert_allclose(morpho.LL.distance, 10*um + (1 + np.arange(5))*um)
+    assert_allclose(sum(morpho.LR.length), 5*um)
+    assert_allclose(morpho.LR.distance, 10*um + (1 + np.arange(10))*0.5*um)
+    assert_allclose(sum(morpho.right.length), 3*um)
+    assert_allclose(morpho.right.distance, (1 + np.arange(7))*3./7.*um)
+    assert_allclose(sum(morpho.right.nextone.length), 2*um)
+    assert_allclose(morpho.right.nextone.distance, 3*um+(1 + np.arange(3))*2./3.*um)
 
 
 @attr('codegen-independent')
@@ -105,30 +105,30 @@ def test_construction_coordinates():
     assert_allclose(neuron.Cm, 1 * uF / cm ** 2)
 
     # Test morphological variables
-    assert_allclose(neuron.main.x_, morpho.x)
-    assert_allclose(neuron.L.main.x_, morpho.L.x)
-    assert_allclose(neuron.LL.main.x_, morpho.LL.x)
-    assert_allclose(neuron.right.main.x_, morpho.right.x)
-    assert_allclose(neuron.L.main.distance_, morpho.L.distance)
-    assert_allclose(neuron.L.main.diameter_, morpho.L.diameter)
-    assert_allclose(neuron.L.main.area_, morpho.L.area)
-    assert_allclose(neuron.L.main.length_, morpho.L.length)
+    assert_allclose(neuron.main.x, morpho.x)
+    assert_allclose(neuron.L.main.x, morpho.L.x)
+    assert_allclose(neuron.LL.main.x, morpho.LL.x)
+    assert_allclose(neuron.right.main.x, morpho.right.x)
+    assert_allclose(neuron.L.main.distance, morpho.L.distance)
+    assert_allclose(neuron.L.main.diameter, morpho.L.diameter)
+    assert_allclose(neuron.L.main.area, morpho.L.area)
+    assert_allclose(neuron.L.main.length, morpho.L.length)
 
     # Check basic consistency of the flattened representation
     assert all(neuron.diffusion_state_updater._ends[:].flat >=
                neuron.diffusion_state_updater._starts[:].flat)
 
     # Check that length and distances make sense after compression
-    assert_allclose(sum(morpho.L.length)*metre, 10*um)
-    assert_allclose(morpho.L.distance*metre, (1 + np.arange(10))*um)
-    assert_allclose(sum(morpho.LL.length)*metre, 5*um)
-    assert_allclose(morpho.LL.distance*metre, 10*um + (1 + np.arange(5))*um)
-    assert_allclose(sum(morpho.LR.length)*metre, 5*um)
-    assert_allclose(morpho.LR.distance*metre, 10*um + (1 + np.arange(10))*0.5*um)
-    assert_allclose(sum(morpho.right.length)*metre, 3*um)
-    assert_allclose(morpho.right.distance*metre, (1 + np.arange(7))*3./7.*um)
-    assert_allclose(sum(morpho.right.nextone.length)*metre, 2*um)
-    assert_allclose(morpho.right.nextone.distance*metre, 3*um+(1 + np.arange(3))*2./3.*um)
+    assert_allclose(sum(morpho.L.length), 10*um)
+    assert_allclose(morpho.L.distance, (1 + np.arange(10))*um)
+    assert_allclose(sum(morpho.LL.length), 5*um)
+    assert_allclose(morpho.LL.distance, 10*um + (1 + np.arange(5))*um)
+    assert_allclose(sum(morpho.LR.length), 5*um)
+    assert_allclose(morpho.LR.distance, 10*um + (1 + np.arange(10))*0.5*um)
+    assert_allclose(sum(morpho.right.length), 3*um)
+    assert_allclose(morpho.right.distance, (1 + np.arange(7))*3./7.*um)
+    assert_allclose(sum(morpho.right.nextone.length), 2*um)
+    assert_allclose(morpho.right.nextone.distance, 3*um+(1 + np.arange(3))*2./3.*um)
 
 
 @attr('long')
